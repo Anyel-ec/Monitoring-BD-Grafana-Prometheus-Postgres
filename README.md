@@ -76,7 +76,3 @@ docker-compose down
 ```
 
 This will stop the services and remove the containers, while keeping persistent data based on the volume configurations specified in `docker-compose.yml`.
-
----
-
-This README provides an overview of the project and basic guidance for setting up and running it. Make sure to adjust the details according to the specific requirements of your environment and application.
