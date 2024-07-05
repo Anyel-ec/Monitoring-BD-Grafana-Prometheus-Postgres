@@ -4,6 +4,10 @@ services:
     image: grafana/grafana
     ports:
       - 3000:3000
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - 'grafana_storage:/var/lib/grafana'
 
   prometheus:
     image: prom/prometheus
@@ -15,7 +19,7 @@ services:
   postgres:
     image: postgres:latest
     ports:
-      - 5432:5432
+      - 5433:5432
     volumes:
       - ./backup:/var/lib/postgresql/data
     environment:
@@ -31,3 +35,6 @@ services:
     links:
       - postgres
       - prometheus
+
+volumes:
+  grafana_storage:
